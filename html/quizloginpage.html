@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{
+background-size: auto; 
+max-width:auto;
+color: white;
+background-color: #731aaa;
+min-width:auto;
+}
+ @media screen and (max-width:365px)  {
+  .container{
+  margin:auto;
+  text-align: center;
+  width: 400px;
+  height: 450px;
+  margin-top:90px;
+  padding: 15px;
+  padding-top:px;
+  border-top-left-radius: 150px;
+  background: #00fbff;
+  border: none;
+background: #47258C;
+background: linear-gradient(191deg, rgba(71, 37, 140, 1) 0%, rgba(82, 9, 121, 0.94) 0%, rgba(69, 149, 173, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+h1{
+  color: rgb(243, 12, 12);
+}
+}
+.wholecontainer{
+  margin-left:500px;
+  margin-top: 50px;
+   border: groove white;
+  text-align: center;
+  width: 550px;
+  height:650px;
+     background: #47258C;
+     border-radius:20px;
+background: linear-gradient(355deg, rgba(71, 37, 140, 1) 0%, rgba(82, 9, 121, 0.94) 18%, rgba(172, 69, 173, 1) 100%, rgba(0, 212, 255, 1) 93%);
+}
+.container{
+margin-top: 64px;
+  margin:auto;
+  text-align: center;
+  width: 400px;
+  height: 450px;
+  margin-top:90px;
+  padding: 15px;
+  padding-top:px;
+  border-top-left-radius: 150px;
+  background: #00fbff;
+  border: none;
+background: #47258C;
+background: linear-gradient(191deg, rgba(71, 37, 140, 1) 0%, rgba(82, 9, 121, 0.94) 0%, rgba(69, 149, 173, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+h1{
+  color: white;
+}
+#username{
+  font-size:20px;
+  color: rgb(178, 227, 244);
+  border-radius: 45px;
+  border: none;
+}
+#username1{
+  border-radius: 45px;
+  border: none white;
+  padding:5px;
+  font-size: 20px;
+  text-align: center;
+
+}
+#passward{
+  font-size: 20px;
+  color: rgb(178, 227, 244);
+  border-radius: 45px;
+  border: none;
+}
+#password1{
+  border-radius: 45px;
+  border: none;
+  padding:5px;
+  font-size: 20px;
+  text-align: center;
+}
+#remember{
+  width: 5px;
+  margin: 5px;
+  padding:5px;
+  margin-right:30px;
+
+}
+#forgetpassward{
+   width: 05px;
+  margin: 5px;
+  padding:5px;
+
+}
+.login{
+  width: 150px;
+  height: 40px;
+  margin-top:40px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+}
+.login a{
+    text-decoration: none;
+}
+.login:hover{
+    background-color: rgb(199, 195, 191);
+}
+.signin{
+  font-size: 12px;
+  margin-left:11px;
+}
+  </style>
+  </head>
+  <body>
+    <div class="wholecontainer">
+      <div class="container">
+  <div> <h1> Sign In<h2></div>
+  <label id="username">User name</label><br><br>
+  <input type="text" id="username1"style="width:250px; height: 25px;" required ><br><br>
+   <label  id="passward"> Password </label><br><br>
+  <input type="password" id="password1"  style="width:250px; height: 25px;" required > <br><br>
+  <input type="checkbox" onclick="myFunction()" style="margin-left: -120px;">Show Password<br><br>
+  <button type="button" class="login" onclick="loginpage()">login</button>
+  </div>
+</div>
+    </body>
+  <script> 
+   let passwords = document.getElementById("password1");
+    function myFunction(){ 
+  if (passwords.type === "password") {
+    passwords.type = "text";
+  } else {
+    passwords.type = "password";
+  }
+} 
+  const defaultPassword = "123";
+
+  function loginpage(){
+    let enterpasscode = document.getElementById("password1").value;
+    let enterusername= document.getElementById("username1").value;
+
+    if(!enterusername ){
+        alert(' Enter a Username !!');
+        return;
+    }
+    else if(!enterpasscode){
+         alert(' Enter a Password !!');
+        return;
+    }
+     if(enterpasscode !== defaultPassword){
+         alert('Wrong Password !!');
+         passwords.value ="";
+      
+   return;
+   }
+   else{
+        window.location.href = "quiz.html";
+   }
+        
+    }
+  </script>
+  <html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stylish To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #d70909;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 12px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      background-color: #007bff;
+    }
+
+    .delete-btn {
+      background-color: #d9534f;
+      color: white;
+      margin-left: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background-color: #f1f1f1;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li span {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>📝 My To-Do List</h2>
+    <input type="text" id="task" placeholder="Enter a task">
+    <button class="add-btn" onclick="add()">Add</button>
+
+    <ul id="list"></ul>
+  </div>
+
+  <script>
+  function add() {
+  // Step 1: Get what the user typed
+  let inputBox = document.getElementById("task");
+  let taskText = inputBox.value.trim();
+
+  // Step 2: Check if task is empty
+  if (taskText === "") {
+    alert("Task empty da 😅");
+    return;
+  }
+
+  // Step 3: Create list item
+  let li = document.createElement("li");
+
+  // Task text span
+  let text = document.createElement("span");
+  text.textContent = taskText;
+
+  // Step 4: Edit button
+  let editBtn = document.createElement("button");
+  editBtn.textContent = "Edit";
+  editBtn.onclick = function () {
+    let newText = prompt("reni", text.textContent);
+    if (newText && newText!== "") {
+      text.textContent = newText;
+    }
+  };
+
+  // Step 5: Delete button
+  let delBtn = document.createElement("button");
+  delBtn.textContent = "Delete";
+  delBtn.onclick = function () {
+    li.remove();
+  };
+
+  // Step 6: Add text + buttons to list item
+  li.appendChild(text);
+  li.appendChild(editBtn);
+  li.appendChild(delBtn);
+
+  // Step 7: Add list item to the list
+  let list = document.getElementById("list");
+  list.appendChild(li);
+
+  // Step 8: Clear the input box
+  inputBox.value = "";
+}
+
+  </script>
+
+</body>
+</html>

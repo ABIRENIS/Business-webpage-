@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body{
+         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, 'Arial Narrow', Arial, sans-serif;
+         font-size: 17px;
+           background-color: #6ac6e0;
+         
+}
+          input[type="text"]{
+            text-align: center;
+      }
+      input[type="password"]{
+            text-align: center;
+      }
+      input[type="date"]{
+            text-align: center;
+      }
+      input[type="email"]{
+            text-align: center;
+      }
+      input[type="number"]{
+            text-align: center;
+      }
+     table,td {
+border: 1px solid black;
+   border-collapse: collapse;
+   text-align: center;
+   margin: auto;
+   margin-top:100px;
+   
+}
+
+.head{
+  margin-top:20px;
+ background:linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%);
+background: linear-gradient(90deg, rgba(171, 154, 237, 1) 0%, rgba(150, 120, 196, 1) 0%, rgba(166, 157, 207, 1) 42%, rgba(106, 187, 217, 1) 100%); 
+padding: 30px;
+padding-bottom: 30px;
+font-weight:bold ;
+border: solid;
+border-width: 1px;
+color: rgb(29, 19, 19);
+border-bottom: 20px;
+font-size: 20px;
+}
+#reset{
+  width: 100px;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  margin-right: 50px;
+  float: right;
+  margin-top: 10px;
+}
+#submit{
+  width: 100px;
+  height: 45px;
+   border-radius: 25px;
+   border: none;
+    float: right;
+    text-align: center;
+    margin: 10px;
+}
+</style>
+        </style>
+        </head>
+    <body>
+        <form>
+           <table style="width:70% ; background:#ab9aed;
+background:linear-gradient(90deg, rgba(171, 154, 237, 1) 0%, rgba(150, 120, 196, 1) 0%, rgba(166, 157, 207, 1) 42%, rgba(106, 187, 217, 1) 100%);">
+              <caption class="head">Registration Form </caption>
+  <tr style="height:50px;width:30%">
+         <label for="Enter Name"><td> Enter Name </td> </label>
+    <td style="width:60%"> <input type="text" id="EnterName" name="Enter Name"placeholder="username" style="width: 166.4px; height: 24px; border-radius: 15px; border: none; text-align: center;" required></td>
+  </tr>
+  <tr  style="height:50px;width:30%">
+       <lable for="birthday" id="birthday"><td> Birth day </td></lable>
+       <td> <input type="date" placeholder="Birthday" style="width: 166.4px; height: 24px;border-radius: 15px; border: none;" required ></td>
+    </tr>
+  <tr style="height:50px">
+        <label for="Enter pwd"><td> Enter Password </td></label>
+    <td><input type="password" id="Enterpwd" name="Enterpwd" placeholder="password"  style="width: 166.4px; height: 24px;border-radius: 15px; border: none;"required></td>
+  </tr>
+  <tr style="height:50px">
+       <label for="Enter adddres"><td> Email Address</td> </label>
+    <td><input type="email" id=" Emailadddres" name="adddres" placeholder="Email"  style="width: 166.4px; height: 24px;border-radius: 15px; border: none;" required ></td>
+  </tr>
+  <tr style="height:70px"> 
+        <label for="selectgame"><td> Select Game</td></label>
+    <td><input list="browsers" id="adddres" name="adddres" style="width: 166.4px; height: 24px;border-radius: 15px; border: none;"></td>
+             <datalist id="browsers">
+                         <option value=" Hockey">
+                        <option value="Football">
+                        <option value="Badminton">
+                        <option value="Cricket">
+                        <option value="Volleyball">
+                        <option value="Kho-Kho">
+                           <option value="Others..">
+            </datalist>
+  </tr>
+  <tr style="height:50px">
+    <lable for="gender"><td> Gender</td></lable>
+    <td><input type="radio" id="gender" name="male">
+      <lable> male </lable> 
+    <input type="radio" id="female" name="male">
+       <lable> female </lable> 
+       <input type="radio" id="other" name="male">
+       <lable> other </lable> 
+    </tr>
+    <tr style="height:50px">
+      <label> <td>Select ur age</td></label>
+      <td> <input type="number" name="age" id="age" min="1" max="120" placeholder="age"  style="width: 166.4px; height: 24px;border-radius: 15px; border: none;"required></td>
+      </tr>
+     <lable for="photo" style="text-align: center;"><td>Select Photo </td></lable>
+     <td style="height:60px"><input type="file" name="files" id="photo" style="width: px; height: 24px; border: none;" multiple required> </td>
+     <tr>
+    <td style="height:60px"  colspan="2"><input type="reset" name="reset" id="reset" >
+  <input type="submit" name="submit" id="submit"></td>
+</tr>
+ </table>  
+  </form>
+    
+        </body>
+ </html>

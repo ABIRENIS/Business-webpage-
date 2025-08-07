@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+<body>
+   
+<div class="container" id="container">
+  <p>Computer Quiz!</p>
+  <div class="question" id="question"></div>
+   <label class="option"> <input type="radio" name="option" value="1">  <span  id="option1"></span> </label>
+    <label class="option" ><input type="radio" name="option" value="2"> <span id="option2"></span></label>
+   <label class="option" ><input type="radio" name="option"  value="3"> <span id="option3"></span></label>
+   <label class="option"><input type="radio"  name="option" value="4"> <span id="option4"></span></label>
+   <div class="next-btn" ><button  type="button" onclick="nextquestion()">Next</button></div>
+  <div class="reset-btn" ><button  type="button" onclick="reset()">Reset</button></div>
+</div>
+<input type="text" id="result" readonly >
+
+        <script src="script/quiz.js"> </script>
+  </body>
+      </html>

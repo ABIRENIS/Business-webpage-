@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title> tic tac toe </title>
+        
+         <style> 
+         body{
+            background-color: aquamarine;
+         }
+            #box{
+                text-align: center;
+                display: grid;
+                grid-template-columns:repeat(3,auto);
+                gap: 10px;
+                width: 500px;
+                height: 500px;
+                 margin: auto;
+                 margin-top: 70px;
+                cursor: pointer;  
+                
+            }
+            .box:hover{
+                background-color: rgb(234, 244, 244);
+            }
+            .box{
+                  
+                  border: 2px solid rgb(0, 137, 130);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 20px;
+                  background-color: azure;
+                 
+                 
+           
+            }
+           button{
+                text-align: center;
+               font-size: 20px;
+                margin-top: 20px;
+                width: 200px;
+                background-color: rgb(29, 188, 186);
+                height: 50px;
+                margin-left: 655px;
+
+           }
+           p{
+             margin-left: 710px;
+             margin-top: 40px;
+             width:100px;
+             text-align: center;
+             
+           }
+         </style>
+        </head>
+        <body>
+            <div id="box">
+                <div class="box" data-index="0"></div>
+                <div class="box" data-index="1"></div>
+                <div class="box" data-index="2"></div>
+                <div class="box" data-index="3"></div>
+                <div class="box" data-index="4"></div>
+                <div class="box" data-index="5"></div>
+                <div class="box" data-index="6"></div>
+                <div class="box" data-index="7"></div>
+                <div class="box" data-index="8"></div>
+                </div>
+                 <p id="status">Player X's turn</p>
+                <button id="restart">Restart</button>
+                <div id="gifs"></div>
+           
+            <script>
+              const boxes= document.querySelectorAll ('.box') ;
+              const btnrestart= document.getElementById('restart') ;
+              const statuses= document.getElementById('status');
+               let available=['','','','','','','','','']; 
+               let currentPlayer='X';
+               let gameIsRunning=true;
+               const winningConditions = [
+                    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                    [0, 4, 8], [2, 4, 6]
+                ];   
+              
+           boxes.forEach(box => box.addEventListener('click', handleClick));
+        btnrestart.addEventListener('click', restart);
+
+        function handleClick(e) {
+            const index = e.target.dataset.index;
+            if (available[index] !== '' || !gameIsRunning) return;
+
+            available[index] = currentPlayer;
+            e.target.textContent = currentPlayer;
+
+            if (checkWins()) {
+                statuses.textContent = `${currentPlayer} Wins! `;
+               
+                alert(` Congrats Player ${currentPlayer} Is Winning`);
+                gameIsRunning = false;
+                restart();
+            } else if (available.every(cell => cell !== '')) {
+                statuses.textContent = `Match is a Draw! `;
+                alert(` The Match is Draw`);
+                gameIsRunning = false;
+                restart();
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                statuses.textContent = `Player ${currentPlayer} turn`;
+                
+            }
+        }
+
+        function checkWins() {
+            return winningConditions.some(condition => {
+                const [a, b, c] = condition;
+                return available[a] && available[a] === available[b] && available[a] === available[c];
+            });
+        }
+
+        function restart() {
+            available = ['', '', '', '', '', '', '', '', ''];
+            currentPlayer = 'X';
+            gameIsRunning = true;
+            boxes.forEach(box => box.textContent = '');
+            statuses.textContent = `Player X's turn`;
+        }
+    </script>
+
+</body>
+</html>
