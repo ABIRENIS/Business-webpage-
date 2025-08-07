@@ -1,0 +1,47 @@
+  body{
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe4c36a;
+    }
+    .container{
+      width:auto;
+      background-color: #84dce7;
+      width: 550px;
+      height: 400px;
+      padding:20px;
+      margin-top: 40px;
+      border-radius: 50px;
+    }
+    div {
+      font-size: 45px;
+      width:auto;
+      padding: 0px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+    button {
+      font-size: 18px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background-color: rgb(40, 95, 142);
+      width: 150px;
+      color: aliceblue;
+    }
+    #watch{
+      display: flex;
+      margin: auto;
+      margin-top: 60px;
+      height: 70px;
+      width: 300px;
+      font-size: 30px;
+      border: none;
+      border-radius: 20px;
+      text-align: center;
+    }
+    #reset{
+      margin-top: 30px;
+    }
+
